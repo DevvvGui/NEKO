@@ -1,3 +1,2 @@
+websockets
 asyncio
-pyqrcode
-kyros==1.0.2

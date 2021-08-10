@@ -1,14 +1,9 @@
+import websockets
 import asyncio
-import pyqrcode
-
-from kyros import Client, WebsocketMessage
 
 async def start():
-    client = await Client.create()
-    qrdata = await client.qr_login()
-    qrcode = pyqrcode.create(qrdata)
-    
-    print(qrcode.terminal())
-    
+    async with websockets.connect('wss://web.whatsapp.com/ws', origin = 'https://web.whatsapp.com') as socket:
+            while True:
+                print(socket.messages.pop())
+                
 asyncio.run(start())
-    
