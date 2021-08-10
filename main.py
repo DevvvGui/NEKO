@@ -7,4 +7,6 @@ async def start():
                 message = socket.recv()
                 print(message)
                 
+                asyncio.sleep(5)
+                
 asyncio.run(start())
