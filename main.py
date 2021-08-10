@@ -3,7 +3,8 @@ import asyncio
 
 async def start():
     async with websockets.connect('wss://web.whatsapp.com/ws', origin = 'https://web.whatsapp.com') as socket:
-        message = await socket.recv()
-        print(message)
-            
+        await socket.send('emgejsks,["admin","init",[0,3,2390],["Long browser description","ShortBrowserDesc"],"enbekeksuenb",true]')
+        messages = socket.messages
+        print(messages)
+        
 asyncio.run(start())
